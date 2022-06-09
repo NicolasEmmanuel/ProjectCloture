@@ -22,3 +22,18 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+/*Route BLOG*/
+Route::get('/blog',[BlogController::class,'index'])->name('blog');
+
+/**Route FORMATION */
+Route::get('/formation',[FormationController::class,'index'])->name('formation');
+
+/**Route FORMATEUR */
+Route::get('/formateur',[FormateurController::class,'index'])->name('formateur');
+
+/**Route TEAM */
+Route::get('/team',[TeamController::class,'index'])->name('team');
+
+/**Route CONTACT */
+Route::get('/contact',[ContactController::class,'index'])->name('contact');
