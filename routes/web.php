@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\FormationController;
@@ -46,4 +47,4 @@ Route::get('/formateur',[FormateurController::class,'index'])->name('formateur')
 //Route::get('/team',[TeamController::class,'index'])->name('team');
 
 /**Route CONTACT */
-//Route::get('/contact',[ContactController::class,'index'])->name('contact');
+Route::get('/contact',[ContactController::class,'index'])->name('contact');
