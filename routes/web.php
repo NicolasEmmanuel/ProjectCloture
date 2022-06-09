@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\FormationController;
+use App\Http\Controllers\AdminFormateurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,7 @@ Route::get('/formateur',[FormateurController::class,'index'])->name('formateur')
 
 /**Route CONTACT */
 //Route::get('/contact',[ContactController::class,'index'])->name('contact');
+
+/* Route admin formateur*/
+
+Route::get('/admin-formateur',[AdminFormateurController::class,'index'])->middleware(['auth'])->name('admin-formateur');
