@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\FormationController;
 
@@ -28,6 +29,9 @@ require __DIR__.'/auth.php';
 
 /*Route BLOG*/
 Route::get('/blog',[BlogController::class,'index'])->name('blog');
+
+/*Route ADMIN-BLOG*/
+Route::get('/admin/blog',[AdminBlogController::class,'index'])->middleware(['auth'])->name('admin-blog');
 
 /**Route FORMATION */
 Route::get('/formation',[FormationController::class,'index'])->name('formation');
