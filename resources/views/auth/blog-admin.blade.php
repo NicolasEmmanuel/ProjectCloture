@@ -1,1 +1,0 @@
-<h1>Vous êtes admin dans notre blog</h1>

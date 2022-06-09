@@ -9,8 +9,18 @@ class AdminBlogController extends Controller
 
     public function index(){
 
-        return view('auth.blog-admin');
+        return view('admin.admin-blog');
 
     }
    
+    public function edite(){
+
+        return view('admin.admin-blog-edite');
+    }
+
+    public function create(){
+
+        return back();
+    }
+
 }
