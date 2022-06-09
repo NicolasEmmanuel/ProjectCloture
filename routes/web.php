@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\FormationController;
 
@@ -26,7 +27,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 /*Route BLOG*/
-//Route::get('/blog',[BlogController::class,'index'])->name('blog');
+Route::get('/blog',[BlogController::class,'index'])->name('blog');
 
 /**Route FORMATION */
 Route::get('/formation',[FormationController::class,'index'])->name('formation');
