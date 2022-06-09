@@ -27,6 +27,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+require __DIR__.'/blog.php';
+require __DIR__.'/formateur.php';
+require __DIR__.'/formation.php';
+require __DIR__.'/user.php';
 
 /*Route BLOG*/
 Route::get('/blog',[BlogController::class,'index'])->name('blog');
