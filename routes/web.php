@@ -33,7 +33,7 @@ Route::get('/blog',[BlogController::class,'index'])->name('blog');
 Route::get('/formation',[FormationController::class,'index'])->name('formation');
 /**Route Admin FORMATION */
 Route::get('/admin/formation',[FormationController::class,'admin'])->middleware('auth')
-->name('formation');
+->name('auth-formation');
 
 /**Route FORMATEUR */
 Route::get('/formateur',[FormateurController::class,'index'])->name('formateur');
