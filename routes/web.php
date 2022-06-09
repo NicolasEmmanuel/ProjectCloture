@@ -42,7 +42,7 @@ Route::get('/admin/blog',[AdminBlogController::class,'index'])->middleware(['aut
 Route::get('/formation',[FormationController::class,'index'])->name('formation');
 /**Route Admin FORMATION */
 Route::get('/admin/formation',[FormationController::class,'admin'])->middleware('auth')
-->name('formation');
+->name('auth-formation');
 
 /**Route FORMATEUR */
 Route::get('/formateur',[FormateurController::class,'index'])->name('formateur');
