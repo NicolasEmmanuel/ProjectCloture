@@ -31,6 +31,9 @@ Route::get('/blog',[BlogController::class,'index'])->name('blog');
 
 /**Route FORMATION */
 Route::get('/formation',[FormationController::class,'index'])->name('formation');
+/**Route Admin FORMATION */
+Route::get('/admin/formation',[FormationController::class,'admin'])->middleware('auth')
+->name('formation');
 
 /**Route FORMATEUR */
 Route::get('/formateur',[FormateurController::class,'index'])->name('formateur');
