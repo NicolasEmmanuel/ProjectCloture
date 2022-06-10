@@ -1007,6 +1007,18 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(106 100 241 / var(--tw-bg-opacity));
 }
+.bg-\[\#25511b\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 81 27 / var(--tw-bg-opacity));
+}
+.bg-\[\#56784e\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(86 120 78 / var(--tw-bg-opacity));
+}
+.bg-\[\#aadf9c\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(170 223 156 / var(--tw-bg-opacity));
+}
 .fill-current {
   fill: currentColor;
 }
