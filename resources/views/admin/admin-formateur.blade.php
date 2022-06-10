@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>LISTE FORMATEUR</title>
-</head>
-<body>
-    
-</body>
-</html>
 
+@extends('layouts.admin')
+@section('content') 
+
+
+<h2 class="text-gray-600 font-semibold">LISTE DE FORMATEUR</h2>
 <!-- component -->
 <div class="bg-white p-8 rounded-md w-full">
 	<div class=" flex items-center justify-between pb-6">
 		<div>
-			<h2 class="text-gray-600 font-semibold">LISTE DE FORMATEUR</h2>
+			
 		</div>
 		<div class="flex items-center justify-between">
 			
@@ -113,3 +105,5 @@
 			</div>
 		</div>
 	</div>
+
+    @endsection
