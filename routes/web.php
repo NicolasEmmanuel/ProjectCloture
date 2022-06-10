@@ -34,8 +34,11 @@ require __DIR__.'/user.php';
 
 
 
-/**Route FORMATEUR */
-Route::get('/formateur',[FormateurController::class,'index'])->name('formateur');
+/**Route FORMATION */
+Route::get('/formation',[FormationController::class,'index'])->name('formation');
+/**Route Admin FORMATION */
+Route::get('/admin/formation',[FormationController::class,'admin'])->middleware('auth')
+->name('auth-formation');
 
 /**Route TEAM */
 //Route::get('/team',[TeamController::class,'index'])->name('team');
