@@ -34,7 +34,7 @@
             
             <div>
               <button
-                class="hover:shadow-form rounded-md bg-[#80f164] py-3 px-8 text-base font-semibold text-black outline-none mt-7"
+                class="hover:shadow-form rounded-md bg-[#aadf9c] py-3 px-8 text-base font-semibold text-black outline-none mt-7"
               >
                Ajouter
               </button>
