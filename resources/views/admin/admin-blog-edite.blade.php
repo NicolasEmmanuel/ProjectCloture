@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BLOG ADMIN FORMULAIRE</title>
-    <link href="/css/app.css" rel="stylesheet">
-</head>
-<body>
+@extends('layouts.admin')
+@section('content') 
     <div class="flex items-center justify-center p-12">
         <!-- Author: FormBold Team -->
         <!-- Learn More: https://formbold.com -->
@@ -50,7 +42,7 @@
           </form>
         </div>
       </div>
-</body>
+
             <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
             <script type="text/javascript">
                 CKEDITOR.replace('wysiwyg-editor', {
@@ -58,4 +50,5 @@
                     filebrowserUploadMethod: 'form'
                 });
             </script>
-</html>
+  @endsection
+

@@ -1,15 +1,7 @@
-<!-- component -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BLOG LIST</title>
-    <link href="/css/app.css" rel="stylesheet">
-</head>
-<body>
-    <div class="bg-white p-8 rounded-md w-full">
+@extends('layouts.admin')
+@section('content') 
+
+    <div class="bg-red p-8 rounded-md w-full">
         <div class=" flex items-center justify-between pb-6">
             
             <div class="flex items-center justify-between">
@@ -110,9 +102,6 @@
                 </div>
             </div>
         </div> 
-</body>
-</html>
-   
+     
 
-</html>
-
+        @endsection
