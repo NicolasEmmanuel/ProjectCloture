@@ -32,14 +32,13 @@ require __DIR__.'/formateur.php';
 require __DIR__.'/formation.php';
 require __DIR__.'/user.php';
 
-/*Route BLOG*/
-Route::get('/blog',[BlogController::class,'index'])->name('blog');
 
-/*Route ADMIN-BLOG*/
-Route::get('/admin/blog',[AdminBlogController::class,'index'])->middleware(['auth'])->name('admin-blog');
 
-/**Route FORMATEUR */
-Route::get('/formateur',[FormateurController::class,'index'])->name('formateur');
+/**Route FORMATION */
+Route::get('/formation',[FormationController::class,'index'])->name('formation');
+/**Route Admin FORMATION */
+Route::get('/admin/formation',[FormationController::class,'admin'])->middleware('auth')
+->name('auth-formation');
 
 /**Route TEAM */
 //Route::get('/team',[TeamController::class,'index'])->name('team');
