@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\FormateurController;
 use App\Http\Controllers\FormationController;
 
@@ -25,9 +27,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+require __DIR__.'/blog.php';
+require __DIR__.'/formateur.php';
+require __DIR__.'/formation.php';
+require __DIR__.'/user.php';
 
-/*Route BLOG*/
-Route::get('/blog',[BlogController::class,'index'])->name('blog');
+
 
 /**Route FORMATION */
 Route::get('/formation',[FormationController::class,'index'])->name('formation');
@@ -35,11 +40,8 @@ Route::get('/formation',[FormationController::class,'index'])->name('formation')
 Route::get('/admin/formation',[FormationController::class,'admin'])->middleware('auth')
 ->name('auth-formation');
 
-/**Route FORMATEUR */
-Route::get('/formateur',[FormateurController::class,'index'])->name('formateur');
-
 /**Route TEAM */
 //Route::get('/team',[TeamController::class,'index'])->name('team');
 
 /**Route CONTACT */
-//Route::get('/contact',[ContactController::class,'index'])->name('contact');
+Route::get('/contact',[ContactController::class,'index'])->name('contact');
