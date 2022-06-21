@@ -38,27 +38,32 @@
 							<tr>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Name
+									Nom
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									products
+									Compétences
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Created at
+									Email
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									QRT
+									Linkedin
 								</th>
 								<th
 									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-									Status
+									Facebook
+								</th>
+								<th
+									class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+									Role
 								</th>
 							</tr>
 						</thead>
 						<tbody>
+							@forelse ($users as $user)
 							<tr>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<div class="flex items-center">
@@ -69,34 +74,51 @@
                                         </div>
 											<div class="ml-3">
 												<p class="text-gray-900 whitespace-no-wrap">
-													Vera Carpenter
+													{{ $user->name}}
 												</p>
 											</div>
 										</div>
 								</td>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-									<p class="text-gray-900 whitespace-no-wrap">Admin</p>
+									<p class="text-gray-900 whitespace-no-wrap">{{$user->competence}}</p>
 								</td>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<p class="text-gray-900 whitespace-no-wrap">
-										Jan 21, 2020
+										{{$user->email}}
 									</p>
 								</td>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<p class="text-gray-900 whitespace-no-wrap">
-										43
+										{{$user->linkedin}}
 									</p>
 								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">
+										{{$user->facebook}}
+									</p>
+								</td>
+								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+									<p class="text-gray-900 whitespace-no-wrap">
+										{{$user->role}}
+									</p>
+								</td>
+								@if( $user->admin)
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<span
                                         class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                         <span aria-hidden
                                             class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-									<span class="relative">Activo</span>
+									<span class="relative">Admin</span>
 									</span>
 								</td>
+								@endif
 							</tr>
-							<tr>
+							@empty
+							<h1> il n'y a pas d'utilisateur</h1>
+							@endforelse
+
+
+							{{-- <tr>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
 									<div class="flex items-center">
 										<div class="flex-shrink-0 w-10 h-10">
@@ -200,7 +222,8 @@
 									<span class="relative">Inactive</span>
 									</span>
 								</td>
-							</tr>
+							</tr> --}}
+
 						</tbody>
 					</table>
 					<div
