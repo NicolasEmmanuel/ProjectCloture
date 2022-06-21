@@ -22,7 +22,7 @@ class FormationController extends Controller
 
     public function admin(){
 
-        return view('auth.admin-formation') ;
+        return view('admin.admin-formation') ;
         // $this->middleware('auth') ;
     }
 
