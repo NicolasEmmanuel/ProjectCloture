@@ -25,6 +25,4 @@ class FormationController extends Controller
         return view('admin.admin-formation') ;
         // $this->middleware('auth') ;
     }
-
-
 }
