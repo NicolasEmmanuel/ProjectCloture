@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Blog extends Model
 {
     use HasFactory;
+
+    protected $fillable = [ "titre", "description", "category_id" ];
     
     public function category(){
         $this->belongsTo(Category::class);
