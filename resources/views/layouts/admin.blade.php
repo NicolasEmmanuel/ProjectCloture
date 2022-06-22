@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="{{ route('admin-blog-lister') }}">
                             <i class="bx bx-bar-chart-alt-2 icon" ></i>
                             <span class="text nav-text">Blogs</span>
                         </a>
@@ -61,13 +61,13 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="{{ route('auth-formation') }}">
                             <i class="bx bx-pie-chart-alt icon" ></i>
                             <span class="text nav-text">Formations</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="{{ route('admin-user') }}">
                             <i class="bx bx-heart icon" ></i>
                             <span class="text nav-text">Utilisateurs</span>
                         </a>
