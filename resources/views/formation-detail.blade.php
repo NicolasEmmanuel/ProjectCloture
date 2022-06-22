@@ -8,6 +8,8 @@
     <title>Formations</title>
 </head>
 
+@foreach ($formationsdetails as $items)
+	
 <body>
 	<div id="imprime_moi">
 
@@ -21,12 +23,12 @@
 				
 				<br>
 				
-				<span style="color:#00424d; font-size:18px"> Niveau 4 (Bac), Durée : 9 mois (1244 heures)</span>
+				<span style="color:#00424d; font-size:18px">{{ $items->niveau }}, Durée : {{ $items->duree }}</span>
 				<br><br>
 				
 				<center><img src="https://imfpa.mq/traitrouge.png" width="239" height="11"></center>
 				
-				<span style="color:#538135; font-size:18px">Code Rome : I1401, Formacode : 24260</span><br>
+				<span style="color:#538135; font-size:18px">Code Rome : {{ $items->rome }}</span><br>
 				<span style="color:#006a7a; font-size:12px">Date dernière mise à jour : 14/01/2022</span><br><br>
 				
 				<strong style="font-size:14px">
@@ -142,5 +144,7 @@
 		
 		</div>
 </body>
+
+@endforeach
 
 </html>
