@@ -14,9 +14,14 @@ Route::get('/admin/blog-lister',[AdminBlogController::class,'index'])->middlewar
 Route::get('/admin/blog-editer',[AdminBlogController::class,'edite'])->middleware(['auth'])->name('admin-blog-editer');
 
 /*Route ADMIN-BLOG-CREATE*/
-Route::post('/admin/blog-edite',[AdminBlogController::class,'create'])->middleware(['auth'])->name('admin-blog-create');
+Route::post('/admin/blog-edite',[AdminBlogController::class,'store'])->middleware(['auth'])->name('admin-blog-create');
+
+/*Route ADMIN-BLOG-UPDATE modifier les infomations*/
+Route::get('/admin/blog-modifier/{blog}',[AdminBlogController::class,'edite'])->middleware(['auth'])->name('admin-blog-modifier');
+/*Route ADMIN-BLOG-UPDATE poster les modifiacations*/
+Route::post('/admin/blog-modifier/{blog}',[AdminBlogController::class,'update'])->middleware(['auth'])->name('admin-blog-modifier');
 
 /*Route ADMIN-BLOG-DELETE*/
-Route::post('/admin/blog-supprimer',[AdminBlogController::class,'delete'])->middleware(['auth'])->name('admin-blog-delete');
+Route::get('/admin/blog-supprimer/{blog}',[AdminBlogController::class,'destroy'])->middleware(['auth'])->name('admin-blog-delete');
 
 ?>

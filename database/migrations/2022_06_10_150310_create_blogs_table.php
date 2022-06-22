@@ -22,8 +22,8 @@ class CreateBlogsTable extends Migration
             $table->string('image', 180)->nullable();
             $table->timestamps();
 
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Category::class);
+            $table->foreignIdFor(User::class)->nullable();
+            $table->foreignIdFor(Category::class)->nullable();
         });
     }
 
