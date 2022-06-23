@@ -728,6 +728,22 @@ select {
   margin-left: -1rem;
   margin-right: -1rem;
 }
+.mx-44 {
+  margin-left: 11rem;
+  margin-right: 11rem;
+}
+.mx-40 {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+.my-40 {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -802,6 +818,24 @@ select {
 }
 .mb-8 {
   margin-bottom: 2rem;
+}
+.ml-20 {
+  margin-left: 5rem;
+}
+.ml-40 {
+  margin-left: 10rem;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.ml-56 {
+  margin-left: 14rem;
+}
+.mt-40 {
+  margin-top: 10rem;
 }
 .block {
   display: block;
@@ -891,6 +925,14 @@ select {
 }
 .w-4 {
   width: 1rem;
+}
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.w-5\/6 {
+  width: 83.333333%;
 }
 .min-w-full {
   min-width: 100%;
@@ -982,6 +1024,9 @@ select {
 }
 .justify-between {
   justify-content: space-between;
+}
+.justify-evenly {
+  justify-content: space-evenly;
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1271,6 +1316,9 @@ select {
 }
 .text-center {
   text-align: center;
+}
+.align-middle {
+  vertical-align: middle;
 }
 .font-sans {
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

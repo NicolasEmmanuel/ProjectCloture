@@ -5,7 +5,7 @@
 <div class="bg-white rounded-3xl px-8 py-8 m-14 pb-8 w-auto ">
 	<div class=" flex items-center justify-between ">
 		<div>
-			<h2 class="text-gray-600 font-semibold">Formations proposées : {{ $formations->count() }}</h2>
+			<h2 class="text-gray-600 font-semibold">Formations proposées : {{ $formations->count()}}</h2>
 		</div>
         <div class="flex justify-center mr-3">
             <a href="{{route('auth-formation-create')}}">
@@ -91,7 +91,7 @@
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <a href="{{route('auth-formation-edit', [$formation])}}">
                                         <button class="flex flex-row items-center justify-center border-green-500 bg-green-500 text-white rounded-md px-2 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline"
-											formmethod="get">
+											>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                             </svg>
@@ -116,8 +116,9 @@
 					</table>
 				</div>
 			</div>
+			<div class="flex justify-center items-center mt-4">
+			{{ $formations->links() }}
+			</div>
 		</div>
-
 </div>
-
 @endsection

@@ -21,7 +21,7 @@ class FormationController extends Controller
 
     public function admin(){
 
-        $formations = Formation::all() ;
+        $formations = Formation::cursorPaginate(5) ;
         return view('admin.admin-formation', compact('formations')) ;
         // $this->middleware('auth') ;
     }
