@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminBlogController extends Controller
 {
@@ -47,9 +48,8 @@ class AdminBlogController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'titre' => 'bail|required|string|max:255',
-           // "image" => 'bail|required|image|max:1024',
-            "description" => 'bail|required',
+            "titre" => 'bail|required|string|max:255',
+             "description" => 'bail|required',
             //"user_id" => 'bail|required',
             //"category_id" => 'bail|required',
         ]);
@@ -58,18 +58,27 @@ class AdminBlogController extends Controller
     // 2. On upload l'image dans "/storage/app/public/posts"
     //$chemin_image = $request->picture->store("blogs");
 
-    // 3. On enregistre les informations du Post
-   
+    
+    /* if ($request->hasFile('image')) {
+            
+        //enregistre l'image ds la base
+        $path = Storage::putFile('public', $request->file('image'));
+
+        //retourne le chemin d'acces ou est stocker l'image
+        $posts->image = $path;
+
+        
+    } */ 
     $auth_user->blogs()->create([
         "titre" => $request->titre,
-       // "image" => $chemin_image,
-        "description" => $request->description,
+       "description" => $request->description,
         "category_id" => $request->category,
         
     ]);
 
+
     // 4. On retourne vers tous les posts : route("posts.index")
-    return back();
+    return  redirect('admin/blog-lister');
 }
         //
         
@@ -95,7 +104,12 @@ class AdminBlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        
+        $categories = Category::All();
+
+
+        return view('admin.admin-blog-modifier',compact('categories', 'blog'));
+
     }
 
     /**
