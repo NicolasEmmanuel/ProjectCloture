@@ -15,9 +15,14 @@ class AdminUserController extends Controller
 {
     public function index(){
 
-        $users = User::where('id', '!=', Auth::user()->id)->Paginate(4); 
+        $users = User::where('id', '!=', Auth::user()->id); 
 
-        return view('admin.admin-user',compact('users'));
+        $total = $users->count();
+
+        $users = $users->simplePaginate(4);
+
+
+        return view('admin.admin-user',compact('users','total'));
 
     }
 
