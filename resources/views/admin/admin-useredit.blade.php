@@ -18,10 +18,8 @@
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Full Name"
-                @if(isset($user))
+                placeholder="Nom complet"
                 value=" {{ $user->name }} "
-                @endif
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -37,30 +35,11 @@
                 name="email"
                 id="email"
                 placeholder="example@domain.com"
-                @if (isset($user))
                 value="{{$user->email}}"
-                @endif
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
-            <div class="mb-5">
-              <label
-                for="password"
-                class="mb-3 block text-base font-medium text-[#07074D]"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="votre mot de passe"
-                @if (isset($user))
-                value="{{$user->email}}"
-                @endif
-                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-              />
-            </div>
+            
             <div class="mb-5">
               <label
                 for="competence"
@@ -72,10 +51,8 @@
                 type="text"
                 name="competence"
                 id="competence"
-                placeholder="Vos compétences"
-                @if (isset($user))
+                placeholder="Vos compétences"               
                 value="{{$user->competence}}"
-                @endif
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -91,10 +68,9 @@
                 name="presentation"
                 id="presentation"
                 placeholder="Présentez-vous..."
-                class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-              > @if (isset($user))
+                class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"> 
                 {{$user->presentation}}"
-                @endif</textarea>
+              </textarea>
             </div>
             <div class="mb-5">
               <label
@@ -108,9 +84,7 @@
                 name="facebook"
                 id="facebook"
                 placeholder="Lien Facebook"
-                @if (isset($user))
                 value="{{$user->facebook}}"
-              @endif
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -126,10 +100,7 @@
                 name="linkedin"
                 id="linkedin"
                 placeholder="Lien Linkedin"
-                @if (isset($user))
-                value="{{$user->linkedin}}"
-                  
-              @endif
+                value="{{$user->linkedin}}"                 
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -145,9 +116,7 @@
                 name="instagram"
                 id="instagram"
                 placeholder="Lien Instagram"
-                @if (isset($user))
                 value="{{$user->instagram}}"
-              @endif
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -163,9 +132,7 @@
                 name="role"
                 id="role"
                 placeholder="Votre rôle"
-                @if (isset($user))
                 value="{{$user->role}}"  
-              @endif
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
@@ -189,11 +156,7 @@
                 type="submit"
                 class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
               >
-                @if (isset($user))
                 Modifier
-                @else
-                Ajouter
-                @endif
               </button>
               </a>
             </div>

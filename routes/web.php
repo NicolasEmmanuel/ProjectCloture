@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\FormateurController;
@@ -18,9 +19,7 @@ use App\Http\Controllers\FormationController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[LayoutController::class,'index'])->name('accueil');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
