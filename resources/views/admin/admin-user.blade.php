@@ -9,7 +9,7 @@
 	<div class=" flex items-center justify-between pb-6">
 		<div class="inline">
 			<h2 class="text-gray-600 font-semibold text-xl">Liste des Utilisateurs</h2>
-			<p class="text-gray-600 text-xl"> Nombre d'utilisateurs : <span class="text-indigo-600">{{ $users->total() }}</span></p>
+			<p class="text-gray-600 text-xl"> Nombre d'utilisateurs : <span class="text-indigo-600">{{ $total }}</span></p>
 		</div>
 		<div class="flex items-center justify-between">
 			<div class="flex bg-gray-50 items-center p-2 rounded-md">
@@ -21,10 +21,9 @@
 				</svg>
 				<input class="bg-gray-50 outline-none ml-1 block " type="text" name="" id="" placeholder="search...">
           </div>
-				<div class="lg:ml-40 ml-10 space-x-8">
+				{{-- <div class="lg:ml-40 ml-10 space-x-8">
 					<button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">New Report</button>
-					<a href="{{ route('admin-userform') }}"><button class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer">Ajouter</button></a>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 		<div>
