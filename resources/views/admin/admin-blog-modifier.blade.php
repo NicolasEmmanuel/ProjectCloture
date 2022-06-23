@@ -4,10 +4,14 @@
         <!-- Author: FormBold Team -->
         <!-- Learn More: https://formbold.com -->
         <div class="mx-auto w-full max-w-[550px]">
-         
-                       
-                <form action="{{route('admin-blog-create')}}" method="POST" enctype="multipart/form-data">
-     
+          @if (isset($blog))
+          
+              <form action="{{route('admin-blog-modifier',['blog'=> $blog])}}" method="POST" enctype="multipart/form-data">
+
+
+          @endif
+
+       
             @csrf
 
             <div class="mb-5">
@@ -34,7 +38,7 @@
                 </label>
                 <textarea class="ckeditor form-control" name="description">{{$blog->description}}</textarea>
             </div>
-            <input type="file" class="mt-5" name="image">
+            {{-- <input type="file" name="image"> --}}
             {{-- <label for="category">Selectionner votre categorie</label> --}}
             <div class="form-group mt-5">
               
