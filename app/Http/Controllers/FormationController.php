@@ -15,14 +15,18 @@ class FormationController extends Controller
 
     public function detail(){
 
-        $formationsdetails = Formation::all() ;
-        return view('formation-detail', compact('formationsdetails')) ;
+        
+        $items = Formation::first() ;
+        // Faire un dd des variables pour détecter les erreurs
+        // dd($items->detail_formation);
+        return view('formation-detail', compact('items')) ;
     }
 
     public function admin(){
 
+        $total = Formation::count() ;
         $formations = Formation::cursorPaginate(5) ;
-        return view('admin.admin-formation', compact('formations')) ;
+        return view('admin.admin-formation', compact('formations','total')) ;
         // $this->middleware('auth') ;
     }
 
@@ -33,9 +37,8 @@ class FormationController extends Controller
      */
     public function create()                                            /* FONCTION DE CR */
     {
-        $formations = Formation::all() ;
 
-        return view('admin.admin-create-formation', compact('formations')) ;
+        return view('admin.admin-create-formation') ;
     }
 
     /**
@@ -48,36 +51,27 @@ class FormationController extends Controller
     {
         /* champs requis */
         $validate = $request->validate(
-            ["nom" => "required",
+            ["id" => "required",
             "duree" => "required"]
         ) ;
 
         $saveformation = new Formation() ;
 
-        $saveformation->nom = $request->nom ;
+        $saveformation->id = $request->id ;
 
         $saveformation->duree = $request->duree ;
 
         $saveformation->save() ;
-
-        // $message = 0 ;
-
-        // if(isset($validate)){
-
-        //     $message = 1 ;
-        // }
-
     
         // Redirection vers ma page du formlaire
         
         if (isset($validate)) {
 
-            return redirect()->route('auth-formation', compact('message')) ;
+            return redirect()->route('auth-formation') ;
 
         } else {
 
-            
-            return redirect('auth-formation-create',compact('message')) ;
+            return redirect('auth-formation-create') ;
         }
 
     }
@@ -107,13 +101,17 @@ class FormationController extends Controller
     {
         /* champs requis */
         $validate = $request->validate(
-            ["id" => "required", "nom" => "required",
+            ["id" => "required",
             "duree" => "required"]
         ) ;
 
-        $formation->nom = $request->nom ;
+        $formation->id = $request->id ;
 
         $formation->duree = $request->duree ;
+
+        $formation->description = $request->description ;
+
+        $formation->description = $request->description ;
 
         $formation->update() ;
 

@@ -5,7 +5,7 @@
 <div class="bg-white rounded-3xl px-8 py-8 m-14 pb-8 w-auto ">
 	<div class=" flex items-center justify-between ">
 		<div>
-			<h2 class="text-gray-600 font-semibold">Formations proposées : {{ $formations->count()}}</h2>
+			<h2 class="text-gray-600 font-semibold">Formations proposées : {{ $total }}</h2>
 		</div>
         <div class="flex justify-center mr-3">
             <a href="{{route('auth-formation-create')}}">
@@ -57,7 +57,7 @@
                                 </th>
 							</tr>
 						</thead>
-@foreach ($formations as $formation)
+@foreach($formations as $formation)
 						<tbody>
 							<tr>
 								<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">

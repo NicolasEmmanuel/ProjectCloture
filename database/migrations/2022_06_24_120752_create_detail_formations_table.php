@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Formation;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateDetailFormationsTable extends Migration
 {
@@ -28,6 +29,8 @@ class CreateDetailFormationsTable extends Migration
             $table->string('equivalences', 255)->nullable();
             $table->string('suite_de_parcours_possibles', 255)->nullable();
             $table->timestamps();
+            
+            $table->foreignIdFor(Formation::class);
         });
     }
 

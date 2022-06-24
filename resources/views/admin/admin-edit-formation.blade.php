@@ -18,6 +18,9 @@
           >
             Titre
           </label>
+          @error('nom')
+          <h2  class="text-red-700">* Veuillez insérer un titre</h2>
+          @enderror
           <input
             type="text"
             name="nom"
@@ -34,6 +37,9 @@
           >
             Durée
           </label>
+          @error('duree')
+          <h2  class="text-red-700">* Veuillez insérer une durée</h2>
+          @enderror
           <input
             type="text"
             name="duree"
@@ -66,11 +72,11 @@
           >
             Détails
           </label>
-          <textarea class="w-full h-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"  
+          <textarea
+            class="ckeditor form-control w-full h-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"  
             cols="30" rows="10"
-            type="text"
-            name="details"
-            id="details"
+            name="description"
+            id="description"
             placeholder="Contenu de la formation">
             {{-- class="w-full h-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"   --}}
         </textarea>
@@ -92,12 +98,15 @@
         </div>
       </form>
       {{-- FIN formulaire d'édition --}}
-
-        @if (session('message'))
-        <div class="alert alert-success">{{session('message')}}</div>
-        @endif
-
     </div>
   </div>
 
+  <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+  <script type="text/javascript">
+      CKEDITOR.replace('wysiwyg-editor', {
+          filebrowserUploadUrl: "{{route('admin-blog-create', ['_token' => csrf_token() ])}}",
+          filebrowserUploadMethod: 'form'
+      });
+  </script>
+  
 @endsection
